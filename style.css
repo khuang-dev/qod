@@ -39,6 +39,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## All Archives Page
 	## Submit a Quote Page
 --------------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Exo&display=swap);
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -229,8 +230,8 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
+  color: white;
+  font-family: "Exo", sans-serif;
   font-size: 1rem;
   line-height: 1.5; }
 
@@ -238,9 +239,20 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
 
+h1 {
+  color: white; }
+
+h2 {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: normal; }
+
 /* Copy */
 p {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 300; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -287,13 +299,12 @@ html {
 *,
 *:before,
 *:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   -webkit-box-sizing: inherit;
           box-sizing: inherit; }
 
 body {
   background: #222;
-  /* Fallback for when there is no custom background color defined. */ }
+  font-family: "Exo", sans-serif; }
 
 blockquote,
 q {
@@ -314,15 +325,10 @@ ol {
   margin: 0 0 1.5rem 3rem; }
 
 ul {
-  list-style: disc; }
+  list-style: none; }
 
-ol {
-  list-style: decimal; }
-
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5rem; }
+li {
+  display: inline-block; }
 
 dt {
   font-weight: bold; }
@@ -332,9 +338,7 @@ dd {
 
 img {
   height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */ }
+  /* Make sure images are scaled correctly. */ }
 
 table {
   margin: 0 0 1.5rem;
@@ -411,11 +415,12 @@ textarea {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: royalblue; }
+  text-decoration: none;
+  color: #0c0; }
   a:visited {
-    color: purple; }
+    color: #0c0; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #090; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -426,7 +431,13 @@ a {
   clear: both;
   display: block;
   float: left;
-  width: 100%; }
+  width: 100%;
+  line-height: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -455,19 +466,24 @@ a {
     float: left;
     position: relative; }
   .main-navigation a {
-    display: block;
-    text-decoration: none; }
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 1rem;
+    border-right: 1px solid white; }
+
+.main-navigation li:first-child a {
+  padding-left: 0; }
+
+.main-navigation li:last-child a {
+  border-right: 0; }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block; }
+button.menu-toggle {
+  display: none; }
 
-@media screen and (min-width: 768px) {
-  .menu-toggle {
-    display: none; }
-  .main-navigation ul {
-    display: block; } }
+.menu-toggle,
+.main-navigation ul {
+  display: block; }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -548,6 +564,42 @@ a {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.source {
+  display: none; }
+
+.logo {
+  display: block;
+  width: 300px; }
+
+#new-quote-button {
+  color: #0c0;
+  border: 2px solid #0c0;
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  text-shadow: none;
+  font-size: 1rem;
+  padding: 0.75rem 2.25rem; }
+
+.link__red-academy {
+  width: 100%; }
+  .link__red-academy a {
+    border-right: 0;
+    padding: 0; }
+
+.site-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 80vh;
+  padding: 0.75rem; }
+
 /* Posts and pages */
 .sticky {
   display: block; }

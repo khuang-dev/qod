@@ -1,7 +1,38 @@
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-
+.site-info {
+}
+.source {
+	display: none;
+}
+.logo {
+	display: block;
+	width: 300px;
+}
+#new-quote-button {
+	color: $color__link;
+	border: 2px solid $color__link;
+	background: transparent;
+	box-shadow: none;
+	text-shadow: none;
+	font-size: 1rem;
+	padding: 0.75rem 2.25rem;
+}
+.link__red-academy {
+	width: 100%;
+	a {
+	border-right: 0;
+	padding: 0;
+	}
+}
+.site-container {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	height: 80vh;
+	padding: 0.75rem;
+}
 /* Posts and pages */
 
 .sticky {

@@ -12,10 +12,12 @@
 			<footer id="colophon" class="site-footer" role="contentinfo">
 				<div class="site-info">
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html( 'Primary Menu' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					<div><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?></div>
+					<span class="link__red-academy">Brought to you by <a href="www.redacademy.com">Red Academy</a></span>
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
+			
+
 		</div><!-- #page -->
 
 		<?php wp_footer(); ?>

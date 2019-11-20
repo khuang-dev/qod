@@ -6,16 +6,16 @@ html {
   box-sizing: border-box;
   font-size: 1rem;
 }
-
 *,
 *:before,
 *:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   box-sizing: inherit;
 }
 
 body {
-  background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+  background: $color__bg;
+  font-family: $font__main;
+
 }
 
 blockquote,
@@ -41,17 +41,10 @@ ol {
 }
 
 ul {
-  list-style: disc;
+  list-style: none;
 }
-
-ol {
-  list-style: decimal;
-}
-
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: $base__space-unit;
+li {
+  display: inline-block;
 }
 
 dt {
@@ -64,7 +57,6 @@ dd {
 
 img {
   height: auto; /* Make sure images are scaled correctly. */
-  max-width: 100%; /* Adhere to container width. */
 }
 
 table {

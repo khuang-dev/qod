@@ -5,6 +5,7 @@
 /* Links */
 
 a {
+	text-decoration: none;
 	color: $color__link;
 
 	&:visited {
@@ -31,7 +32,9 @@ a {
 	display: block;
 	float: left;
 	width: 100%;
-
+	line-height: 1;
+	display: flex;
+	flex-wrap: wrap;
 	ul {
 		display: none;
 		list-style: none;
@@ -79,35 +82,47 @@ a {
 	li {
 		float: left;
 		position: relative;
-
+		
 		&:hover > a,
 		&.focus > a {
 		}
 	}
 	a {
-		display: block;
+		display: inline-block;
 		text-decoration: none;
+		padding: 0 1rem;
+		border-right: 1px solid $color__p;
+
 	}
+}
+.main-navigation {
+	li:first-child {
+		a {
+			padding-left: 0;
+		}
+	}
+	li:last-child {
+		a { 
+		border-right: 0;
+		}
+	}
+}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a {
 	}
-}
+
+
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+button.menu-toggle {
+	display: none;
 }
+.menu-toggle,
+.main-navigation ul{
+	display: block;
 
-@media screen and (min-width: 768px) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
 }
 
 .comment-navigation,
