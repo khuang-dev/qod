@@ -8,9 +8,19 @@
 }
 .logo {
 	display: block;
-	width: 300px;
+	width: 300px; 
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	@include tablet {
+		width: 500px;
+	}
+	@include desktop {
+		width: 700px;
+		margin: 2.5rem auto;
+	}
 }
 #new-quote-button {
+	display: block;
 	color: $color__link;
 	border: 2px solid $color__link;
 	background: transparent;
@@ -18,20 +28,167 @@
 	text-shadow: none;
 	font-size: 1rem;
 	padding: 0.75rem 2.25rem;
+	margin-top: 1.5rem;
+	margin-bottom: 6rem;
+	&:hover {
+		color: $color__link-hover;
+		border-color: $color__link-hover;
+	}
+	@include tablet {
+		margin-top: 3rem;
+		width: 250px;
+		font-size: 1.25rem;
+		font-weight: 700;
+	}
+	@include desktop {
+		margin: 3rem auto;
+		margin-bottom: 6rem;
+	}
 }
 .link__red-academy {
 	width: 100%;
+	font-weight: 300;
+	margin-top: 1rem;
+	margin-bottom: 6rem;
 	a {
 	border-right: 0;
 	padding: 0;
 	}
+	@include tablet {
+		width: auto;
+		margin-top: 0;
+		padding-left: 1rem;
+	}
 }
 .site-container {
+	display: block;
+	height: 80vh;
+	padding: 0.85rem;
+	max-width: 1080px;
+	@include desktop {
+		padding: 1.5rem;
+		margin: 0 auto;
+	}
+}
+.content__page {
+	margin-bottom: 6rem;
+	width: 100%;
+	height: auto;
+	p {	
+	font-size: 1rem;
+	}
+}
+.content__404 {
+	width: 100%;
+	height: auto;
+	font-size: 1rem;
+}
+.clearfix ul {
+	margin: 0;
+	padding: 0;
+	li{ 
+		margin-bottom: 0.5rem;
+		margin-right: 1.25rem;
+		a {
+			line-height: 1.5;
+			@include tablet {
+				font-size: 1.25rem;
+			}
+			@include desktop {
+				font-size: 1.5rem !important;
+			}
+		}
+	}
+}
+.clearfix {
+	h2 {
+		@include tablet {
+			font-size: 1.5rem;
+		}
+	}
+}
+.tag-archives {
+	margin-bottom: 7rem;
+}
+#quote-submission-form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	@include desktop {
+		margin-right: 16rem;
+	}
+	label {
+		display: block;
+		margin-bottom: 0.75rem;
+	}
+}
+.quote-submission-wrapper {
+	@include desktop {
+		width: 650px;
+	}
+}
+.quote-submission {
+	margin-bottom: 6rem;
+}
+.title__search {
+	border-bottom: 1px $color__p dotted;
+	padding-bottom: 1.5rem;
+}
+.entry-summary {
+	p {
+	font-size: 1rem;
+	}
+}
+.number-pagination {
+	margin-top: 3rem;
+	margin-bottom: 6rem;
+}
+.page-numbers {
+	padding: 0 0.25rem;
+}
+.title__category {
+	border-bottom: 1px $color__p dotted;
+	padding-bottom: 1.5rem;
+}
+.category-main article {
+	@extend .title__category;
+	@include tablet {
+		p {
+			font-size: 1.75rem;
+		}
+	}
+	@include desktop {
+		p {
+			font-size: 2.5rem;
+		}
+	}
+}
+.site-content {
+	@include desktop {
 	display: flex;
 	justify-content: space-around;
-	flex-direction: column;
-	height: 80vh;
-	padding: 0.75rem;
+	&::before {
+		font-family: "Font Awesome 5 Free";
+		content: "\f10d";
+		font-weight: 900;
+		color: $color__link;
+		font-size: 125px;
+		margin-right: 3.5rem;
+		margin-top: 0.5rem;
+	}
+	&::after {
+		font-family: "Font Awesome 5 Free";
+		content: "\f10e";
+		font-weight: 900;
+		color: $color__link;
+		font-size: 125px;
+		margin-left: 3.5rem;
+		margin-top: 0.5rem;
+	}
+}
+}
+.error-404 {
+	margin-right: 12rem;
 }
 /* Posts and pages */
 

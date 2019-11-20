@@ -11,8 +11,8 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+				<h1><?php the_title();?></h1>
+				<section class="content__page"><?php the_content();?></section>
 
 			<?php endwhile; // End of the loop. ?>
 

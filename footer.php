@@ -6,14 +6,13 @@
  */
 
 ?>
-
 			</div><!-- #content -->
 
 			<footer id="colophon" class="site-footer" role="contentinfo">
 				<div class="site-info">
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<div><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?></div>
-					<span class="link__red-academy">Brought to you by <a href="www.redacademy.com">Red Academy</a></span>
+					<span class="link__red-academy">Brought to you by <a href="www.redacademy.com">RED Academy</a></span>
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
 			

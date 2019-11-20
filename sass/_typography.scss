@@ -24,7 +24,15 @@ h1 {
 h2 {
 	color: $color__h2;
 	font-size: 1.25rem;
-	font-weight: normal;
+	font-weight: 300;
+	@include tablet {
+		font-weight: 400;
+	}
+	a {
+		color: $color__link;
+		font-weight: bold;
+		font-size: 1.5rem;
+	}
 }
 
 /* Copy */
@@ -34,6 +42,18 @@ p {
 	color: $color__p;
 	font-size: 1.25rem;
 	font-weight: 300;
+	@include tablet {
+		font-size: 1.75rem;
+	}
+	@include desktop {
+		font-size: 2.5rem;
+	}
+}
+
+.fas {
+	color: $color__link;
+	font-size: 125px;
+	margin-top: 1.5rem;
 }
 
 dfn, cite, em, i {

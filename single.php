@@ -11,11 +11,11 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
-
-			<?php the_post_navigation(); ?>
-
+		<section class="post__single">
+			<?php the_content();?>
+			<h2>— <?php the_title();?></h2>
+			<button type="button" id="new-quote-button">Show Me Another!</button>
+		</section>
 		<?php endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->

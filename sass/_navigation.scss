@@ -7,6 +7,7 @@
 a {
 	text-decoration: none;
 	color: $color__link;
+	font-weight: 300;
 
 	&:visited {
 		color: $color__link-visited;
@@ -92,10 +93,16 @@ a {
 		text-decoration: none;
 		padding: 0 1rem;
 		border-right: 1px solid $color__p;
-
 	}
 }
 .main-navigation {
+	@include desktop {
+		align-items: right;
+		justify-content: right;
+		justify-items: right;
+		margin-left: 45%;
+		width: 55%;
+	}
 	li:first-child {
 		a {
 			padding-left: 0;
@@ -104,6 +111,9 @@ a {
 	li:last-child {
 		a { 
 		border-right: 0;
+		}
+		@include tablet {
+			border-right: 1px solid $color__p;
 		}
 	}
 }
