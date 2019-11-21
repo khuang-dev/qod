@@ -1,25 +1,57 @@
 (function($){
 
-//1. get request to grab random post and append to the DOM
-//add a click event for "show me another" button and then run AJAX code below
-
+//new quote
 $('#new-quote-button').on('click', function(){
     
-    $.ajax()({
-        method:"GET",
-        url: qod_vars.rest_url + '/wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1'
+    $.ajax({
+        method: "GET",
+        url: window.qod_vars.rest_url + '/wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1'
     })
     .done(function(data) {
-        console.log(data);
-    //append the quote to the DOM
-    }).
-    fail(function(error){
+        console.log(data[0]);  
+        $('.entry-content').empty();
+        $('.entry-meta').empty();
+        $('.entry-content').append('<p>' + data[0].content.rendered + '</p>');
+
+        if (data[0]._qod_quote_source === "") {
+            $('.entry-meta').append('<h2>' + data[0].title.rendered + '</h2>');
+        } else if (data[0]._qod_quote_source_url === "") {
+            $('.entry-meta').append('<h2>' + data[0].title.rendered + '<span class="source">' + ', ' + data[0]._qod_quote_source + '</span>'+'</h2>');
+        } else {
+            $('.entry-meta').append('<h2>' + data[0].title.rendered + '<span class="source">' + ', <a style="font-size: 1.25rem; href="' + data[0]._qod_quote_source_url + '">' + data[0]._qod_quote_source + '</a>'+'</span>'+'</h2>')
+        }
+    })
+    .fail(function(error){
         console.log("an error occurred", error);
 });
 });
-//2. post a new quote using the post method
-//using a form to submit a quote so a .submit event
 
 
+//submit
+$('#quote-submission-form').on('submit', function( event ) {
+    event.preventDefault();
 
-})(jQuery)
+    $.ajax({
+        method:"POST",
+        url: window.qod_vars.rest_url + "/wp/v2/posts",
+        data: {
+            title: document.getElementById('quote-author').value,
+            content: document.getElementById('quote-content').value,
+            _qod_quote_source: document.getElementById('quote-source').value,
+            _qod_quote_source_url: document.getElementById('quote-source-url').value
+         },
+         beforeSend: function(xhr) {
+            xhr.setRequestHeader( 'X-WP-Nonce', window.qod_vars.wpapi_nonce );
+         }
+    })
+    .done(function(data) {
+        alert('Success');
+        console.log(data);
+    })
+    .fail(function(error) {
+        console.log(error);
+    })
+});
+
+
+})(jQuery);

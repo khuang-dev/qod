@@ -646,8 +646,17 @@ button.menu-toggle {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.entry-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
 .source {
-  display: none; }
+  font-style: italic;
+  margin: 0.9rem 0.5rem;
+  font-size: 1.25rem; }
+  .source a {
+    font-weight: 300; }
 
 .logo {
   display: block;
